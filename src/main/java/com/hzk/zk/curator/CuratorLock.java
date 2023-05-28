@@ -29,7 +29,7 @@ public class CuratorLock {
     public void before(){
         RetryPolicy retryPolicy = new ExponentialBackoffRetry(1000,3);
         client = CuratorFrameworkFactory.builder()
-                .connectString(BasicConstants.IP_CLUSTER)
+                .connectString(BasicConstants.IP)
                 .sessionTimeoutMs(1000 * 20)
                 .retryPolicy(retryPolicy)
                 .namespace("create")
